@@ -45,3 +45,28 @@ Thumbs.db
 
 # Figma Make internal
 .figma/make/.cache/
+
+# Test files
+test-*.sh
+test-*.html
+test-*.js
+test-*.cjs
+test-*.jpg
+test-*.png
+test-*.jpeg
+diagnose-*.sh
+verify.sh
+
+# Deployment documentation (keep README.md if needed)
+DEPLOY*.md
+FORCE-DEPLOY.md
+COMPLETE-FIX.md
+FINAL-SOLUTION.*
+VERCEL-FIX.md
+
+# Vercel
+.vercel/
+
+# Temporary files
+*.tmp
+*.temp
