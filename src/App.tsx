@@ -3,6 +3,24 @@ import React, { useState, useEffect, useRef, useCallback } from 'react'
 import { HashRouter, Routes, Route, useNavigate, Link, useLocation } from 'react-router-dom'
 import SiteLayout from '@/components/SiteLayout'
 import { useReveal } from '@/components/useReveal'
+import biologyLabImg from '@/imports/BIOLOGY-LAB.jpg.jpeg'
+import biologyLabSmImg from '@/imports/BIOLOGY-LAB-768x512.jpg.jpeg'
+import chemistryLabImg from '@/imports/CHEMISTRY-LAB.jpg.jpeg'
+import chemistryLabSmImg from '@/imports/CHEMISTRY-LAB-768x512.jpg.jpeg'
+import ccaRoomImg from '@/imports/CCA-ROOM.jpg.jpeg'
+import ccaRoomSmImg from '@/imports/CCA-ROOM-768x512.jpg.jpeg'
+import classroomImg from '@/imports/classroom-scaled.jpg.jpeg'
+import libraryImg from '@/imports/LIBRARY.jpg.jpeg'
+import library2Img from '@/imports/LIBRARY.jpg-1.jpeg'
+import recreationImg from '@/imports/Recreation-indoor-game.jpg.jpeg'
+import schBuildingImg from '@/imports/schbuilding.jpeg'
+import schoolHallImg from '@/imports/SCHOOL-HALL.jpg.jpeg'
+import sickBayImg from '@/imports/Sick-bay.jpg.jpeg'
+import foodNutImg from '@/imports/Food-nut-room.jpg.jpeg'
+import homeEconImg from '@/imports/HOME-ECONOMICS-RM1.jpg.jpeg'
+import ictRoomImg from '@/imports/ICT-ROOM.jpg.jpeg'
+import physicLabImg from '@/imports/PHYSIC-LAB.jpg.jpeg'
+import basicTechImg from '@/imports/Basic-tech-workshop.jpg.jpeg'
 import FacilitiesPage from './FacilitiesPage'
 import ContactPage from './ContactPage'
 import DirectorsSpeech from '@/pages/DirectorsSpeech'
@@ -32,19 +50,19 @@ interface Testimonial { quote: string; author: string; role: string }
 // ─── Data ────────────────────────────────────────────────────────────────────
 
 const heroSlides: Slide[] = [
-  { headline: 'Welcome To Sultan Hanafi Royal Schools', subline: "We Nurture Tomorrow's Leaders", cta: 'Learn More', bg: '/images/schbuilding.jpeg', overlay: 'rgba(26,26,26,0.55)' },
-  { headline: 'Leaders Are Made Here', subline: 'Readers Are Leaders', cta: 'Learn More', bg: '/images/classroom-scaled.jpg.jpeg', overlay: 'rgba(26,26,26,0.65)' },
-  { headline: 'Excellence in Chemical Sciences', subline: 'Advanced laboratory experiences fostering precision, inquiry, and innovation', cta: 'Learn More', bg: '/images/CHEMISTRY-LAB-768x512.jpg.jpeg', overlay: 'rgba(26,26,26,0.58)' },
-  { headline: 'Mastering the Principles of Physics', subline: 'Innovative experiments that transform theory into real-world understanding', cta: 'Learn More', bg: '/images/CHEMISTRY-LAB-768x512.jpg.jpeg', overlay: 'rgba(26,26,26,0.68)' },
-  { headline: 'Modern Biology Lab for Future Health and Science Professionals', subline: 'Cutting-edge exploration of living systems through research-driven learning', cta: 'Learn More', bg: '/images/BIOLOGY-LAB-768x512.jpg.jpeg', overlay: 'rgba(26,26,26,0.58)' },
+  { headline: 'Welcome To Sultan Hanafi Royal Schools', subline: "We Nurture Tomorrow's Leaders", cta: 'Learn More', bg: schBuildingImg, overlay: 'rgba(26,26,26,0.55)' },
+  { headline: 'Leaders Are Made Here', subline: 'Readers Are Leaders', cta: 'Learn More', bg: classroomImg, overlay: 'rgba(26,26,26,0.65)' },
+  { headline: 'Excellence in Chemical Sciences', subline: 'Advanced laboratory experiences fostering precision, inquiry, and innovation', cta: 'Learn More', bg: chemistryLabSmImg, overlay: 'rgba(26,26,26,0.58)' },
+  { headline: 'Mastering the Principles of Physics', subline: 'Innovative experiments that transform theory into real-world understanding', cta: 'Learn More', bg: chemistryLabSmImg, overlay: 'rgba(26,26,26,0.68)' },
+  { headline: 'Modern Biology Lab for Future Health and Science Professionals', subline: 'Cutting-edge exploration of living systems through research-driven learning', cta: 'Learn More', bg: biologyLabSmImg, overlay: 'rgba(26,26,26,0.58)' },
 ]
 
 const showcaseSlides: Slide[] = [
-  { headline: 'Innovating Through Technology', subline: 'Empowering students with digital fluency, coding, and future-ready skills', cta: 'Explore More', bg: '/images/ICT-ROOM.jpg.jpeg', overlay: 'rgba(26,26,26,0.60)' },
-  { headline: 'Excellence in Life Skills Education', subline: 'Modern facilities for mastering nutrition, creativity, and sustainable living', cta: 'Explore More', bg: '/images/LIBRARY.jpg-1.jpeg', overlay: 'rgba(26,26,26,0.62)' },
-  { headline: 'Engineering the Future', subline: "Hands-on innovation, design thinking, and technical mastery for tomorrow's leaders", cta: 'Explore More', bg: '/images/schbuilding.jpeg', overlay: 'rgba(26,26,26,0.60)' },
-  { headline: 'Celebrating Culture and Creative Expression', subline: 'An inspiring space where art, culture, and creativity shape confident, well-rounded individuals', cta: 'Explore More', bg: '/images/CCA-ROOM-768x512.jpg.jpeg', overlay: 'rgba(26,26,26,0.60)' },
-  { headline: 'Excellence in Sports and Recreation', subline: 'Premium indoor facilities fostering teamwork, discipline, and a passion for healthy living', cta: 'Explore More', bg: '/images/Recreation-indoor-game.jpg.jpeg', overlay: 'rgba(26,26,26,0.62)' },
+  { headline: 'Innovating Through Technology', subline: 'Empowering students with digital fluency, coding, and future-ready skills', cta: 'Explore More', bg: ictRoomImg, overlay: 'rgba(26,26,26,0.60)' },
+  { headline: 'Excellence in Life Skills Education', subline: 'Modern facilities for mastering nutrition, creativity, and sustainable living', cta: 'Explore More', bg: library2Img, overlay: 'rgba(26,26,26,0.62)' },
+  { headline: 'Engineering the Future', subline: "Hands-on innovation, design thinking, and technical mastery for tomorrow's leaders", cta: 'Explore More', bg: schBuildingImg, overlay: 'rgba(26,26,26,0.60)' },
+  { headline: 'Celebrating Culture and Creative Expression', subline: 'An inspiring space where art, culture, and creativity shape confident, well-rounded individuals', cta: 'Explore More', bg: ccaRoomSmImg, overlay: 'rgba(26,26,26,0.60)' },
+  { headline: 'Excellence in Sports and Recreation', subline: 'Premium indoor facilities fostering teamwork, discipline, and a passion for healthy living', cta: 'Explore More', bg: recreationImg, overlay: 'rgba(26,26,26,0.62)' },
 ]
 
 const divisions: DivisionCard[] = [
@@ -55,18 +73,18 @@ const divisions: DivisionCard[] = [
 ]
 
 const facilities: FacilityItem[] = [
-  { caption: 'ICT Room', img: '/images/ICT-ROOM.jpg.jpeg', alt: 'Sultan Hanafi ICT Room with laptops on every desk and smart TV' },
-  { caption: 'School Library', img: '/images/LIBRARY.jpg.jpeg', alt: 'Sultan Hanafi School Library with study cubicles and bookshelves' },
-  { caption: 'College Hall', img: '/images/SCHOOL-HALL.jpg.jpeg', alt: 'Sultan Hanafi College Hall examination room with rows of desks' },
-  { caption: 'Sick Bay', img: '/images/Sick-bay.jpg.jpeg', alt: 'Sultan Hanafi Sick Bay with beds and first aid equipment' },
-  { caption: 'Physics Laboratory', img: '/images/PHYSIC-LAB.jpg.jpeg', alt: 'Sultan Hanafi Physics Laboratory with galvanometers and instruments' },
-  { caption: 'Chemistry Laboratory', img: '/images/CHEMISTRY-LAB.jpg.jpeg', alt: 'Sultan Hanafi Chemistry Laboratory with periodic table and equipment' },
-  { caption: 'Biology Laboratory', img: '/images/BIOLOGY-LAB.jpg.jpeg', alt: 'Sultan Hanafi Biology Laboratory with skeleton model and anatomical specimens' },
-  { caption: 'Basic Technology Workshop', img: '/images/Basic-tech-workshop.jpg.jpeg', alt: 'Sultan Hanafi Basic Technology Workshop with hand tools and workbench' },
-  { caption: 'Food & Nutrition Room', img: '/images/Food-nut-room.jpg.jpeg', alt: 'Sultan Hanafi Food and Nutrition Room with kitchen appliances and dining table' },
-  { caption: 'Clothing & Textile Room', img: '/images/HOME-ECONOMICS-RM1.jpg.jpeg', alt: 'Sultan Hanafi Clothing and Textile Room with sewing machines and fabric work' },
-  { caption: 'CCA Room', img: '/images/CCA-ROOM.jpg.jpeg', alt: 'Sultan Hanafi CCA Room with colorful classroom furniture' },
-  { caption: 'Indoor Games', img: '/images/Recreation-indoor-game.jpg.jpeg', alt: 'Sultan Hanafi Indoor Games with table tennis, footballs and board games' },
+  { caption: 'ICT Room', img: ictRoomImg, alt: 'Sultan Hanafi ICT Room with laptops on every desk and smart TV' },
+  { caption: 'School Library', img: libraryImg, alt: 'Sultan Hanafi School Library with study cubicles and bookshelves' },
+  { caption: 'College Hall', img: schoolHallImg, alt: 'Sultan Hanafi College Hall examination room with rows of desks' },
+  { caption: 'Sick Bay', img: sickBayImg, alt: 'Sultan Hanafi Sick Bay with beds and first aid equipment' },
+  { caption: 'Physics Laboratory', img: physicLabImg, alt: 'Sultan Hanafi Physics Laboratory with galvanometers and instruments' },
+  { caption: 'Chemistry Laboratory', img: chemistryLabImg, alt: 'Sultan Hanafi Chemistry Laboratory with periodic table and equipment' },
+  { caption: 'Biology Laboratory', img: biologyLabImg, alt: 'Sultan Hanafi Biology Laboratory with skeleton model and anatomical specimens' },
+  { caption: 'Basic Technology Workshop', img: basicTechImg, alt: 'Sultan Hanafi Basic Technology Workshop with hand tools and workbench' },
+  { caption: 'Food & Nutrition Room', img: foodNutImg, alt: 'Sultan Hanafi Food and Nutrition Room with kitchen appliances and dining table' },
+  { caption: 'Clothing & Textile Room', img: homeEconImg, alt: 'Sultan Hanafi Clothing and Textile Room with sewing machines and fabric work' },
+  { caption: 'CCA Room', img: ccaRoomImg, alt: 'Sultan Hanafi CCA Room with colorful classroom furniture' },
+  { caption: 'Indoor Games', img: recreationImg, alt: 'Sultan Hanafi Indoor Games with table tennis, footballs and board games' },
 ]
 
 const testimonials: Testimonial[] = [
@@ -230,7 +248,7 @@ function HomePage() {
               <button onClick={() => navigate('/admission')} className="inline-block mt-8 px-7 py-3 text-sm font-bold uppercase tracking-wider hover:brightness-90 transition-all cursor-pointer" style={{ background: '#D4A017', color: '#1A1A1A', fontFamily: 'Montserrat, sans-serif' }}>Take A Step →</button>
             </div>
             <div ref={revealWelcomeImg as React.RefCallback<HTMLElement>} className="reveal relative">
-              <img src="/images/classroom-scaled.jpg.jpeg" alt="Sultan Hanafi Royal Schools teacher and students in classroom" className="w-full object-cover" style={{ height: 440 }} />
+              <img src={classroomImg} alt="Sultan Hanafi Royal Schools teacher and students in classroom" className="w-full object-cover" style={{ height: 440 }} />
               <div className="absolute -bottom-5 -left-5 p-5 shadow-xl hidden md:block" style={{ background: '#D4A017', maxWidth: 200 }}>
                 <div className="text-3xl font-black" style={{ fontFamily: 'Montserrat, sans-serif', color: '#1A1A1A' }}>4</div>
                 <div className="text-xs font-bold uppercase tracking-wider" style={{ color: '#1A1A1A', fontFamily: 'Montserrat, sans-serif' }}>School Divisions</div>
@@ -360,8 +378,8 @@ function HomePage() {
           <h2 className="text-2xl md:text-3xl font-black mb-2 gold-underline" style={{ fontFamily: 'Montserrat, sans-serif' }}>News</h2>
           <div className="grid md:grid-cols-2 gap-8 mt-10">
             {[
-              { title: 'Graduation Ceremony', img: '/images/schbuilding.jpeg', date: 'June 2026', excerpt: 'Sultan Hanafi Royal Schools celebrated another milestone as students crossed the stage at our annual graduation ceremony — a testament to hard work, dedication, and the pursuit of excellence.' },
-              { title: '2026 Basic Education Certificate Examination (BECE) Has Commenced', img: '/images/SCHOOL-HALL.jpg.jpeg', date: 'April 2026', excerpt: 'The 2026 BECE is underway at Sultan Hanafi Royal College. Our students are well-prepared and our staff have gone above and beyond to ensure a conducive and fair examination environment.' },
+              { title: 'Graduation Ceremony', img: schBuildingImg, date: 'June 2026', excerpt: 'Sultan Hanafi Royal Schools celebrated another milestone as students crossed the stage at our annual graduation ceremony — a testament to hard work, dedication, and the pursuit of excellence.' },
+              { title: '2026 Basic Education Certificate Examination (BECE) Has Commenced', img: schoolHallImg, date: 'April 2026', excerpt: 'The 2026 BECE is underway at Sultan Hanafi Royal College. Our students are well-prepared and our staff have gone above and beyond to ensure a conducive and fair examination environment.' },
             ].map(news => (
               <article key={news.title} className="bg-white group overflow-hidden shadow-sm hover:shadow-md transition-shadow">
                 <div className="overflow-hidden" style={{ height: 220 }}>

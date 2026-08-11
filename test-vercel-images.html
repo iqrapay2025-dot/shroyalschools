@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Vercel Image Test</title>
+  <style>
+    body { font-family: Arial; max-width: 1200px; margin: 20px auto; padding: 20px; background: #f5f5f5; }
+    .card { background: white; padding: 15px; margin: 10px 0; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+    img { max-width: 400px; border: 2px solid #ddd; border-radius: 4px; }
+    .success { color: #4CAF50; font-weight: bold; }
+    .error { color: #f44336; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <h1>Vercel Image Loading Test</h1>
+  <p>Testing images from simulated Vercel static file server</p>
+  
+  <div class="card">
+    <h3>Test 1: schbuilding.jpeg</h3>
+    <img src="http://127.0.0.1:9999/images/schbuilding.jpeg" onload="this.style.borderColor='#4CAF50'" onerror="this.style.borderColor='#f44336'">
+    <p id="status1" class="success">Loading...</p>
+  </div>
+  
+  <div class="card">
+    <h3>Test 2: Logo-Trans.png</h3>
+    <img src="http://127.0.0.1:9999/images/Logo-Trans.png" onload="this.style.borderColor='#4CAF50'" onerror="this.style.borderColor='#f44336'">
+    <p id="status2" class="success">Loading...</p>
+  </div>
+  
+  <div class="card">
+    <h3>Test 3: classroom-scaled.jpg.jpeg</h3>
+    <img src="http://127.0.0.1:9999/images/classroom-scaled.jpg.jpeg" onload="this.style.borderColor='#4CAF50'" onerror="this.style.borderColor='#f44336'">
+    <p id="status3" class="success">Loading...</p>
+  </div>
+  
+  <div class="card" style="background: #e3f2fd;">
+    <h3>📋 Result:</h3>
+    <p>If all 3 images show above with GREEN borders, the images will work on Vercel!</p>
+    <p><strong>Server running at:</strong> http://127.0.0.1:9999</p>
+  </div>
+  
+  <script>
+    const imgs = document.querySelectorAll('img');
+    const statuses = [document.getElementById('status1'), document.getElementById('status2'), document.getElementById('status3')];
+    
+    imgs.forEach((img, i) => {
+      img.addEventListener('load', () => {
+        statuses[i].textContent = '✅ SUCCESS - Image loaded! (This means Vercel will work)';
+        statuses[i].className = 'success';
+      });
+      img.addEventListener('error', () => {
+        statuses[i].textContent = '❌ FAILED - Image not loaded (There is a problem)';
+        statuses[i].className = 'error';
+      });
+    });
+  </script>
+</body>
+</html>

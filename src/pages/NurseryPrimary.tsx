@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import SiteLayout from '@/components/SiteLayout'
 import PageHero from '@/components/PageHero'
 import { useReveal } from '@/components/useReveal'
+import classroomImg from '@/imports/classroom-scaled.jpg.jpeg'
 
 const CLASSES = [
   { title: 'Crèche', icon: 'fa-solid fa-baby', desc: 'At our Crèche, we create a nurturing and secure atmosphere designed to foster the highest standards of childcare within a supportive learning community.' },
@@ -34,7 +35,7 @@ export default function NurseryPrimary() {
             </div>
             <div ref={r2 as React.RefCallback<HTMLElement>} className="reveal reveal-delay-1">
               <div className="overflow-hidden rounded-2xl" style={{ aspectRatio: '4/3' }}>
-                <img src="/images/classroom-scaled.jpg.jpeg" alt="Sultan Hanafi Nursery and Primary School" className="w-full h-full object-cover" />
+                <img src={classroomImg} alt="Sultan Hanafi Nursery and Primary School" className="w-full h-full object-cover" />
               </div>
               <div className="mt-4 p-5 flex gap-6" style={{ background: '#D4A017' }}>
                 <div className="text-center">

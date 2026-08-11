@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
+import logoImg from '@/imports/Logo-Trans.png'
 
 const NAV_ITEMS = [
   { label: 'Home', to: '/', items: [] },
@@ -97,7 +98,7 @@ export default function SiteLayout({ children }: { children: React.ReactNode }) 
       <header className="sticky top-0 z-50 w-full bg-white shadow-md">
         <div className="max-w-7xl mx-auto px-4 md:px-8 flex items-center justify-between h-16 md:h-20">
           <Link to="/" className="flex-shrink-0">
-            <img src="/images/Logo-Trans.png" alt="Sultan Hanafi Royal Schools" style={{ height: 60, width: 'auto', objectFit: 'contain' }} />
+            <img src={logoImg} alt="Sultan Hanafi Royal Schools" style={{ height: 60, width: 'auto', objectFit: 'contain' }} />
           </Link>
 
           {/* Desktop nav */}
@@ -174,7 +175,7 @@ export default function SiteLayout({ children }: { children: React.ReactNode }) 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-8">
             <div>
               <div className="mb-5">
-                <img src="/images/Logo-Trans.png" alt="Sultan Hanafi Royal Schools" style={{ height: 48, width: 'auto', objectFit: 'contain' }} />
+                <img src={logoImg} alt="Sultan Hanafi Royal Schools" style={{ height: 48, width: 'auto', objectFit: 'contain' }} />
               </div>
               <p className="text-xs text-white/50 leading-relaxed mb-6">
                 Sultan Hanafi Royal Schools is a conglomerate of several schools that provide qualitative secular and Islamic education to learners of diverse age group in a secure and serene environment.

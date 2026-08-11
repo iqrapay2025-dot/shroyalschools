@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import SiteLayout from '@/components/SiteLayout'
 import PageHero from '@/components/PageHero'
 import { useReveal } from '@/components/useReveal'
+import schBuildingImg from '@/imports/schbuilding.jpeg'
 
 const DEPTS = [
   { name: 'Languages', subjects: ['English Language', 'Yoruba Language', 'French (Future)', 'Hausa (Future)', 'Chinese (Future)'] },
@@ -25,7 +26,7 @@ export default function RoyalCollege() {
           <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
             <div ref={r1 as React.RefCallback<HTMLElement>} className="reveal order-2 md:order-1">
               <div className="overflow-hidden rounded-2xl" style={{ aspectRatio: '4/3' }}>
-                <img src="/images/schbuilding.jpeg" alt="Sultan Hanafi Royal College" className="w-full h-full object-cover" />
+                <img src={schBuildingImg} alt="Sultan Hanafi Royal College" className="w-full h-full object-cover" />
               </div>
               <div className="mt-4 grid grid-cols-3 gap-3">
                 {[['2021', 'Established'], ['10+', 'Age Group'], ['7', 'Departments']].map(([val, lbl]) => (
