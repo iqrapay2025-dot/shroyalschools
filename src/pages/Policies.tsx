@@ -2,26 +2,17 @@ import React from 'react'
 import SiteLayout from '@/components/SiteLayout'
 import PageHero from '@/components/PageHero'
 import { useReveal } from '@/components/useReveal'
-import assessmentPdf from '@/imports/ASSESMENT-POLICY.pdf'
-import antiBullyingPdf from '@/imports/ANTI-BULLYING-DISCIPLINARY-POLICY.pdf'
-import antiBullying1Pdf from '@/imports/ANTI-BULLYING-DISCIPLINARY-POLICY__1_.pdf'
-import careerPdf from '@/imports/CAREER-POLICY.pdf'
-import dressCodePdf from '@/imports/DRESS-CODE-POLICY.pdf'
-import equalOpportunityPdf from '@/imports/EQUAL-OPPORTUNITY-POLICY-1.pdf'
-import firstAidPdf from '@/imports/SULTAN-FIRST-AID-POLICY.pdf'
-import healthSafetyPdf from '@/imports/SULTAN-HEALTH-SAFETY-POLICY.pdf'
-import complaintPdf from '@/imports/COMPLAINT-POLICY-1.pdf'
 
 const POLICIES = [
-  { title: 'Assessment Policy', pdf: assessmentPdf },
-  { title: 'Anti-Bullying and Disciplinary Policy', pdf: antiBullyingPdf },
-  { title: 'Anti-Bullying and Disciplinary Policy (Revised)', pdf: antiBullying1Pdf },
-  { title: 'Career Policy', pdf: careerPdf },
-  { title: 'Dress Code Policy', pdf: dressCodePdf },
-  { title: 'Equal Opportunity Policy', pdf: equalOpportunityPdf },
-  { title: 'First Aid Policy', pdf: firstAidPdf },
-  { title: 'Health and Safety Policy', pdf: healthSafetyPdf },
-  { title: 'Complaint Policy', pdf: complaintPdf },
+  { title: 'Assessment Policy', pdf: '/images/ASSESMENT-POLICY.pdf' },
+  { title: 'Anti-Bullying and Disciplinary Policy', pdf: '/images/ANTI-BULLYING-DISCIPLINARY-POLICY.pdf' },
+  { title: 'Anti-Bullying and Disciplinary Policy (Revised)', pdf: '/images/ANTI-BULLYING-DISCIPLINARY-POLICY__1_.pdf' },
+  { title: 'Career Policy', pdf: '/images/CAREER-POLICY.pdf' },
+  { title: 'Dress Code Policy', pdf: '/images/DRESS-CODE-POLICY.pdf' },
+  { title: 'Equal Opportunity Policy', pdf: '/images/EQUAL-OPPORTUNITY-POLICY-1.pdf' },
+  { title: 'First Aid Policy', pdf: '/images/SULTAN-FIRST-AID-POLICY.pdf' },
+  { title: 'Health and Safety Policy', pdf: '/images/SULTAN-HEALTH-SAFETY-POLICY.pdf' },
+  { title: 'Complaint Policy', pdf: '/images/COMPLAINT-POLICY-1.pdf' },
 ]
 
 export default function Policies() {

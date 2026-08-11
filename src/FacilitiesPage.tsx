@@ -2,35 +2,23 @@ import React, { useEffect } from 'react'
 import SiteLayout from '@/components/SiteLayout'
 import PageHero from '@/components/PageHero'
 import { useReveal } from '@/components/useReveal'
-import biologyLabImg from '@/imports/BIOLOGY-LAB.jpg.jpeg'
-import chemistryLabImg from '@/imports/CHEMISTRY-LAB.jpg.jpeg'
-import ccaRoomImg from '@/imports/CCA-ROOM.jpg.jpeg'
-import libraryImg from '@/imports/LIBRARY.jpg.jpeg'
-import recreationImg from '@/imports/Recreation-indoor-game.jpg.jpeg'
-import schoolHallImg from '@/imports/SCHOOL-HALL.jpg.jpeg'
-import sickBayImg from '@/imports/Sick-bay.jpg.jpeg'
-import foodNutImg from '@/imports/Food-nut-room.jpg.jpeg'
-import homeEconImg from '@/imports/HOME-ECONOMICS-RM1.jpg.jpeg'
-import ictRoomImg from '@/imports/ICT-ROOM.jpg.jpeg'
-import physicLabImg from '@/imports/PHYSIC-LAB.jpg.jpeg'
-import basicTechImg from '@/imports/Basic-tech-workshop.jpg.jpeg'
 import { Link } from 'react-router-dom'
 
 interface FacilityCard { name: string; caption: string; img: string; alt: string }
 
 const facilityCards: FacilityCard[] = [
-  { name: 'College Hall', caption: 'A spacious hall for assemblies, ceremonies, and large school gatherings.', img: schoolHallImg, alt: 'Sultan Hanafi College Hall with rows of desks' },
-  { name: 'Library', caption: 'A quiet, well-stocked space for research, reading, and independent study.', img: libraryImg, alt: 'Sultan Hanafi School Library with study cubicles and bookshelves' },
-  { name: 'Biology Laboratory', caption: 'Fully equipped for hands-on exploration of living systems and life sciences.', img: biologyLabImg, alt: 'Sultan Hanafi Biology Laboratory with skeleton model and specimens' },
+  { name: 'College Hall', caption: 'A spacious hall for assemblies, ceremonies, and large school gatherings.', img: '/images/SCHOOL-HALL.jpg.jpeg', alt: 'Sultan Hanafi College Hall with rows of desks' },
+  { name: 'Library', caption: 'A quiet, well-stocked space for research, reading, and independent study.', img: '/images/LIBRARY.jpg.jpeg', alt: 'Sultan Hanafi School Library with study cubicles and bookshelves' },
+  { name: 'Biology Laboratory', caption: 'Fully equipped for hands-on exploration of living systems and life sciences.', img: '/images/BIOLOGY-LAB.jpg.jpeg', alt: 'Sultan Hanafi Biology Laboratory with skeleton model and specimens' },
   { name: 'ICT Room', caption: 'Modern computers and digital tools building 21st-century tech skills.', img: ictRoomImg, alt: 'Sultan Hanafi ICT Room with laptops on every desk and smart TV' },
   { name: 'Chemistry Laboratory', caption: 'A safe, well-equipped space for practical chemistry experiments.', img: chemistryLabImg, alt: 'Sultan Hanafi Chemistry Laboratory with periodic table and equipment' },
-  { name: 'Physics Laboratory', caption: 'Hands-on equipment for exploring the principles of physics.', img: physicLabImg, alt: 'Sultan Hanafi Physics Laboratory with galvanometers and instruments' },
-  { name: 'Home Economics Room (Clothing & Textile)', caption: 'Practical training in sewing, textiles, and clothing design.', img: homeEconImg, alt: 'Sultan Hanafi Clothing and Textile Room with sewing machines' },
-  { name: 'Home Economics Room (Food & Nutrition)', caption: 'A dedicated space for learning food preparation and nutrition.', img: foodNutImg, alt: 'Sultan Hanafi Food and Nutrition Room with kitchen appliances' },
-  { name: 'Basic Technology Workshop', caption: 'Hands-on tools and equipment for foundational technical and engineering skills.', img: basicTechImg, alt: 'Sultan Hanafi Basic Technology Workshop with hand tools and workbench' },
-  { name: 'Sick Bay', caption: 'A dedicated space for first aid and student health and wellbeing.', img: sickBayImg, alt: 'Sultan Hanafi Sick Bay with beds and first aid equipment' },
-  { name: 'CCA Room', caption: 'A space supporting co-curricular activities and creative pursuits.', img: ccaRoomImg, alt: 'Sultan Hanafi CCA Room with colorful classroom furniture' },
-  { name: 'Recreation Ground & Indoor Games', caption: 'Facilities supporting sports, teamwork, and healthy physical activity.', img: recreationImg, alt: 'Sultan Hanafi Indoor Games with table tennis and board games' },
+  { name: 'Physics Laboratory', caption: 'Hands-on equipment for exploring the principles of physics.', img: '/images/PHYSIC-LAB.jpg.jpeg', alt: 'Sultan Hanafi Physics Laboratory with galvanometers and instruments' },
+  { name: 'Home Economics Room (Clothing & Textile)', caption: 'Practical training in sewing, textiles, and clothing design.', img: '/images/HOME-ECONOMICS-RM1.jpg.jpeg', alt: 'Sultan Hanafi Clothing and Textile Room with sewing machines' },
+  { name: 'Home Economics Room (Food & Nutrition)', caption: 'A dedicated space for learning food preparation and nutrition.', img: '/images/Food-nut-room.jpg.jpeg', alt: 'Sultan Hanafi Food and Nutrition Room with kitchen appliances' },
+  { name: 'Basic Technology Workshop', caption: 'Hands-on tools and equipment for foundational technical and engineering skills.', img: '/images/Basic-tech-workshop.jpg.jpeg', alt: 'Sultan Hanafi Basic Technology Workshop with hand tools and workbench' },
+  { name: 'Sick Bay', caption: 'A dedicated space for first aid and student health and wellbeing.', img: '/images/Sick-bay.jpg.jpeg', alt: 'Sultan Hanafi Sick Bay with beds and first aid equipment' },
+  { name: 'CCA Room', caption: 'A space supporting co-curricular activities and creative pursuits.', img: '/images/CCA-ROOM.jpg.jpeg', alt: 'Sultan Hanafi CCA Room with colorful classroom furniture' },
+  { name: 'Recreation Ground & Indoor Games', caption: 'Facilities supporting sports, teamwork, and healthy physical activity.', img: '/images/Recreation-indoor-game.jpg.jpeg', alt: 'Sultan Hanafi Indoor Games with table tennis and board games' },
 ]
 
 function FacilityCardItem({ card }: { card: FacilityCard }) {

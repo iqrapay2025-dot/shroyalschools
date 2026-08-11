@@ -2,20 +2,17 @@ import React from 'react'
 import SiteLayout from '@/components/SiteLayout'
 import PageHero from '@/components/PageHero'
 import { useReveal } from '@/components/useReveal'
-import logoImg from '@/imports/Logo-Trans.png'
-import directorImg from '@/imports/hanafi-2-1.jpg'
-import adegokImg from '@/imports/Dr._Adegoke-removebg-preview-1-e1778566628845-300x300.png'
 
 const BOARD = [
-  { name: 'Zakariya Olanrewaju Anofi', creds: 'BSc., MSc., FCA, FCCA', role: 'Board Member', photo: directorImg },
+  { name: 'Zakariya Olanrewaju Anofi', creds: 'BSc., MSc., FCA, FCCA', role: 'Board Member', photo: '/images/hanafi-2-1.jpg' },
   { name: 'Mr. Lukman Anofi', creds: 'BSC, MBA, MSc, CPA, FCCA', role: 'Board Member', photo: null },
   { name: 'Mrs. Lasisi-Ahmed Olayinka Idayat', creds: 'B.ED, M.ES', role: 'Board Member', photo: null },
   { name: 'Dr. Ismail Seriki', creds: '', role: 'Board Member', photo: null },
 ]
 
 const EMT = [
-  { name: 'Zakariya Olanrewaju Anofi', creds: 'M.Sc. Financial Management, B.Sc. Applied Accounting, FCA, FCCA', role: 'Chief Executive Officer (CEO)', photo: directorImg },
-  { name: 'DR. Adegoke Musa Olatunji', creds: 'PhD., MEd. Health Edu., BSc.Edu. Human Kinetics Edu., NCE, MTRCN', role: 'Principal, Sultan Hanafi Royal College', photo: adegokImg },
+  { name: 'Zakariya Olanrewaju Anofi', creds: 'M.Sc. Financial Management, B.Sc. Applied Accounting, FCA, FCCA', role: 'Chief Executive Officer (CEO)', photo: '/images/hanafi-2-1.jpg' },
+  { name: 'DR. Adegoke Musa Olatunji', creds: 'PhD., MEd. Health Edu., BSc.Edu. Human Kinetics Edu., NCE, MTRCN', role: 'Principal, Sultan Hanafi Royal College', photo: '/images/Dr._Adegoke-removebg-preview-1-e1778566628845-300x300.png' },
   { name: 'Shaykh Ahmad Ibrahim', creds: "B.SC Qur'an Sciences, B.A Arabic & Islamic Studies", role: "Principal, Sultan Hanafi Qur'an College", photo: null },
   { name: 'Shaykh Abubakr Solah', creds: 'B.A (In view), Diploma in Arabic Lang., Certificate in Arabic Lang.', role: 'Principal, School of Arabic & Islamic Studies', photo: null },
   { name: 'Mrs. Anofi-Badmus Fatimat Omolola', creds: 'HND Accounting, PGDE', role: 'VP Administration, SHRC', photo: null },
@@ -37,7 +34,7 @@ function PersonCard({ name, creds, role, photo }: { name: string; creds: string;
     <div className="bg-white border border-gray-100 hover:shadow-lg transition-shadow text-center" style={{ borderTop: '4px solid #D4A017' }}>
       <div className="pt-8 px-6 pb-6">
         <div className="w-20 h-20 rounded-full overflow-hidden mx-auto mb-4 border-2" style={{ borderColor: '#D4A017' }}>
-          <img src={photo ?? logoImg} alt={name} className={`w-full h-full ${photo ? 'object-cover object-top' : 'object-contain bg-[#1A1A1A] p-2'}`} />
+          <img src={photo ?? '/images/Logo-Trans.png'} alt={name} className={`w-full h-full ${photo ? 'object-cover object-top' : 'object-contain bg-[#1A1A1A] p-2'}`} />
         </div>
         <h3 className="text-sm font-black mb-1 leading-snug" style={{ fontFamily: 'Montserrat, sans-serif' }}>{name}</h3>
         <p className="text-xs font-bold mb-1" style={{ color: '#D4A017', fontFamily: 'Montserrat, sans-serif' }}>{role}</p>

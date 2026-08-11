@@ -2,7 +2,6 @@ import React from 'react'
 import SiteLayout from '@/components/SiteLayout'
 import PageHero from '@/components/PageHero'
 import { useReveal } from '@/components/useReveal'
-import directorImg from '@/imports/hanafi-2-1.jpg'
 
 export default function DirectorsSpeech() {
   const r1 = useReveal()
@@ -16,7 +15,7 @@ export default function DirectorsSpeech() {
             {/* Sidebar */}
             <div ref={r1 as React.RefCallback<HTMLElement>} className="reveal md:col-span-1 flex flex-col items-center text-center md:items-start md:text-left">
               <div className="w-48 h-48 rounded-full overflow-hidden mb-6 border-4" style={{ borderColor: '#D4A017' }}>
-                <img src={directorImg} alt="Zakariya Olanrewaju Anofi" className="w-full h-full object-cover object-top" />
+                <img src="/images/hanafi-2-1.jpg" alt="Zakariya Olanrewaju Anofi" className="w-full h-full object-cover object-top" />
               </div>
               <h3 className="text-lg font-black mb-1" style={{ fontFamily: 'Montserrat, sans-serif' }}>Zakariya Olanrewaju Anofi</h3>
               <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: '#D4A017', fontFamily: 'Montserrat, sans-serif' }}>Director</p>

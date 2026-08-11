@@ -2,46 +2,28 @@ import React, { useState } from 'react'
 import SiteLayout from '@/components/SiteLayout'
 import PageHero from '@/components/PageHero'
 import { useReveal } from '@/components/useReveal'
-import biologyLabImg from '@/imports/BIOLOGY-LAB.jpg.jpeg'
-import chemistryLabImg from '@/imports/CHEMISTRY-LAB.jpg.jpeg'
-import ccaRoomImg from '@/imports/CCA-ROOM.jpg.jpeg'
-import classroomImg from '@/imports/classroom-scaled.jpg.jpeg'
-import libraryImg from '@/imports/LIBRARY.jpg.jpeg'
-import library2Img from '@/imports/LIBRARY.jpg-1.jpeg'
-import recreationImg from '@/imports/Recreation-indoor-game.jpg.jpeg'
-import schBuildingImg from '@/imports/schbuilding.jpeg'
-import schoolHallImg from '@/imports/SCHOOL-HALL.jpg.jpeg'
-import sickBayImg from '@/imports/Sick-bay.jpg.jpeg'
-import foodNutImg from '@/imports/Food-nut-room.jpg.jpeg'
-import homeEconImg from '@/imports/HOME-ECONOMICS-RM1.jpg.jpeg'
-import ictRoomImg from '@/imports/ICT-ROOM.jpg.jpeg'
-import physicLabImg from '@/imports/PHYSIC-LAB.jpg.jpeg'
-import basicTechImg from '@/imports/Basic-tech-workshop.jpg.jpeg'
-import biologyLabSmImg from '@/imports/BIOLOGY-LAB-768x512.jpg.jpeg'
-import chemistryLabSmImg from '@/imports/CHEMISTRY-LAB-768x512.jpg.jpeg'
-import ccaRoomSmImg from '@/imports/CCA-ROOM-768x512.jpg.jpeg'
 
 type Category = 'All' | 'Campus' | 'Classrooms' | 'Facilities' | 'Events'
 
 const PHOTOS: { src: string; alt: string; cat: Category }[] = [
-  { src: schBuildingImg, alt: 'Sultan Hanafi Royal Schools building exterior', cat: 'Campus' },
-  { src: classroomImg, alt: 'Students in classroom', cat: 'Classrooms' },
-  { src: ictRoomImg, alt: 'ICT Room with laptops', cat: 'Facilities' },
-  { src: libraryImg, alt: 'School Library with study cubicles', cat: 'Facilities' },
-  { src: library2Img, alt: 'School Library reading area', cat: 'Facilities' },
-  { src: schoolHallImg, alt: 'College Hall examination room', cat: 'Facilities' },
-  { src: sickBayImg, alt: 'Sick Bay medical room', cat: 'Facilities' },
-  { src: physicLabImg, alt: 'Physics Laboratory', cat: 'Facilities' },
-  { src: chemistryLabImg, alt: 'Chemistry Laboratory', cat: 'Facilities' },
-  { src: chemistryLabSmImg, alt: 'Chemistry Lab close-up', cat: 'Facilities' },
-  { src: biologyLabImg, alt: 'Biology Laboratory with skeleton model', cat: 'Facilities' },
-  { src: biologyLabSmImg, alt: 'Biology Lab specimens', cat: 'Facilities' },
-  { src: basicTechImg, alt: 'Basic Technology Workshop', cat: 'Facilities' },
-  { src: foodNutImg, alt: 'Food and Nutrition Room', cat: 'Facilities' },
-  { src: homeEconImg, alt: 'Clothing and Textile Room', cat: 'Facilities' },
-  { src: ccaRoomImg, alt: 'CCA Room', cat: 'Facilities' },
-  { src: ccaRoomSmImg, alt: 'CCA Room activity space', cat: 'Facilities' },
-  { src: recreationImg, alt: 'Indoor Games and Recreation', cat: 'Facilities' },
+  { src: '/images/schbuilding.jpeg', alt: 'Sultan Hanafi Royal Schools building exterior', cat: 'Campus' },
+  { src: '/images/classroom-scaled.jpg.jpeg', alt: 'Students in classroom', cat: 'Classrooms' },
+  { src: '/images/ICT-ROOM.jpg.jpeg', alt: 'ICT Room with laptops', cat: 'Facilities' },
+  { src: '/images/LIBRARY.jpg.jpeg', alt: 'School Library with study cubicles', cat: 'Facilities' },
+  { src: '/images/LIBRARY.jpg-1.jpeg', alt: 'School Library reading area', cat: 'Facilities' },
+  { src: '/images/SCHOOL-HALL.jpg.jpeg', alt: 'College Hall examination room', cat: 'Facilities' },
+  { src: '/images/Sick-bay.jpg.jpeg', alt: 'Sick Bay medical room', cat: 'Facilities' },
+  { src: '/images/PHYSIC-LAB.jpg.jpeg', alt: 'Physics Laboratory', cat: 'Facilities' },
+  { src: '/images/CHEMISTRY-LAB.jpg.jpeg', alt: 'Chemistry Laboratory', cat: 'Facilities' },
+  { src: '/images/CHEMISTRY-LAB-768x512.jpg.jpeg', alt: 'Chemistry Lab close-up', cat: 'Facilities' },
+  { src: '/images/BIOLOGY-LAB.jpg.jpeg', alt: 'Biology Laboratory with skeleton model', cat: 'Facilities' },
+  { src: '/images/BIOLOGY-LAB-768x512.jpg.jpeg', alt: 'Biology Lab specimens', cat: 'Facilities' },
+  { src: '/images/Basic-tech-workshop.jpg.jpeg', alt: 'Basic Technology Workshop', cat: 'Facilities' },
+  { src: '/images/Food-nut-room.jpg.jpeg', alt: 'Food and Nutrition Room', cat: 'Facilities' },
+  { src: '/images/HOME-ECONOMICS-RM1.jpg.jpeg', alt: 'Clothing and Textile Room', cat: 'Facilities' },
+  { src: '/images/CCA-ROOM.jpg.jpeg', alt: 'CCA Room', cat: 'Facilities' },
+  { src: '/images/CCA-ROOM-768x512.jpg.jpeg', alt: 'CCA Room activity space', cat: 'Facilities' },
+  { src: '/images/Recreation-indoor-game.jpg.jpeg', alt: 'Indoor Games and Recreation', cat: 'Facilities' },
 ]
 
 const CATS: Category[] = ['All', 'Campus', 'Classrooms', 'Facilities', 'Events']
