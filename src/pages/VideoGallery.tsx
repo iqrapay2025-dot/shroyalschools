@@ -25,12 +25,31 @@ export default function VideoGallery() {
             {VIDEOS.map((v, i) => (
               <div key={i} className="group overflow-hidden rounded-2xl bg-gray-50 shadow-sm hover:shadow-lg transition-shadow">
                 <div className="relative bg-gray-900" style={{ aspectRatio: '16/9' }}>
-                  <div className="absolute inset-0 flex flex-col items-center justify-center gap-4">
-                    <div className="w-16 h-16 rounded-full flex items-center justify-center" style={{ background: 'rgba(212,160,23,0.15)', border: '2px solid #D4A017' }}>
-                      <i className="fa-solid fa-play text-2xl pl-1" style={{ color: '#D4A017' }} />
+                  {v.embedUrl ? (
+                    v.embedUrl.includes('youtube.com/embed') ? (
+                      <iframe
+                        src={v.embedUrl}
+                        title={v.title}
+                        className="absolute inset-0 w-full h-full"
+                        frameBorder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                      />
+                    ) : (
+                      <video
+                        src={v.embedUrl}
+                        controls
+                        className="absolute inset-0 w-full h-full object-cover"
+                      />
+                    )
+                  ) : (
+                    <div className="absolute inset-0 flex flex-col items-center justify-center gap-4">
+                      <div className="w-16 h-16 rounded-full flex items-center justify-center" style={{ background: 'rgba(212,160,23,0.15)', border: '2px solid #D4A017' }}>
+                        <i className="fa-solid fa-play text-2xl pl-1" style={{ color: '#D4A017' }} />
+                      </div>
+                      <span className="text-xs font-bold tracking-widest uppercase text-white/50" style={{ fontFamily: 'Montserrat, sans-serif' }}>Video Coming Soon</span>
                     </div>
-                    <span className="text-xs font-bold tracking-widest uppercase text-white/50" style={{ fontFamily: 'Montserrat, sans-serif' }}>Video Coming Soon</span>
-                  </div>
+                  )}
                 </div>
                 <div className="p-5">
                   <span className="inline-block text-[10px] font-bold uppercase tracking-widest px-2 py-0.5 mb-2" style={{ background: 'rgba(212,160,23,0.12)', color: '#D4A017', fontFamily: 'Montserrat, sans-serif' }}>{v.tag}</span>
