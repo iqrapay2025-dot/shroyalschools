@@ -8,7 +8,7 @@ const VIDEOS = [
     title: "Spelling Competition",
     desc: "Watch our talented students compete in the Annual Sultan Hanafi Spelling Competition.",
     thumb: null,
-    embedUrl: null,
+    embedUrl: "https://res.cloudinary.com/nlmhqbwe/video/upload/v1786516139/Spelling-Competition_eup81g.mp4",
     tag: "Academics",
   },
 ]
